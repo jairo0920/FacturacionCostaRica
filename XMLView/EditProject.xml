@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<view>
+    <columns>
+        <group name="basic" numcolumns="12">
+            <column name="customer" order="100">
+               <widget type="autocomplete" fieldname="codcliente" onclick="EditCliente">
+                  <values source="clientes" fieldcode="codcliente" fieldtitle="nombre"></values>
+               </widget>
+            </column>
+            <column name="name" order="110">
+                <widget type="text" fieldname="name" readonly="dinamic" />
+            </column>
+            <column name="creationdate" title="creation-date" order="120">
+                <widget type="date" fieldname="creationdate"/>
+            </column>
+            <column name="description" numcolumns="12" order="130">
+                <widget type="textarea" fieldname="description"/>
+            </column>
+        </group>
+        <group name="advanced" numcolumns="12">
+            <column name="user" order="100">
+               <widget type="select" fieldname="user" required="true">
+                  <values source="users" fieldcode="nick" fieldtitle="nick"></values>
+               </widget>
+            </column>
+            <column name="total" order="110">
+                <widget type="money" fieldname="total" />
+            </column>
+            <column name="verified" order="120">
+                <widget type="checkbox" fieldname="verified"/>
+            </column>
+        </group>
+    </columns>
+</view>
