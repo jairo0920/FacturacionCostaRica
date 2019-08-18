@@ -17,10 +17,17 @@ class ListProject extends ListController {
     }
     
     protected function createViews() {
-        $this->addView('ListProject', 'Project');
-        $this->addSearchFields('ListProject', ['name', 'description']);
-        $this->addOrderBy('ListProject', ['name'], 'name');
-        $this->addOrderBy('ListProject', ['idproject'], 'id', 2);
-        $this->addOrderBy('ListProject', ['creationdate'], 'date');
+        $this->createViewsProject();
+    }
+    
+    protected function createViewsProject($viewName = 'ListProject') {
+        $this->addView($viewName, 'Project');
+        $this->addSearchFields($viewName, ['name', 'description']);
+        $this->addOrderBy($viewName, ['name'], 'name');
+        $this->addOrderBy($viewName, ['idproject'], 'id', 2);
+        $this->addOrderBy($viewName, ['creationdate'], 'date');
+        
+        //Filtros
+        $this->addFilterCheckbox($viewName, 'verified');
     }
 }
