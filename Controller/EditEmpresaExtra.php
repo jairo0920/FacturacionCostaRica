@@ -10,19 +10,19 @@ use FacturaScripts\Core\Base\DataBase\DataBaseWhere;
  *
  * @author jcruz
  */
-class EditProject extends EditController {
+class EditEmpresaExtra extends EditController {
     //put your code here
     public function getModelClassName() {
-        return 'Project';
+        return 'EmpresaExtra';
     }
     
+    /*
     protected function createViews() {
         parent::createViews();
-        $this->addListView('ListProject', 'Project', 'projects');
-        $this->addListView('ListProject-2', 'Project', 'projects');
+        $this->addListView('ListEmpresaExtra', 'EmpresaExtra', 'empresasextras');
         //$this->setTabsPosition('top');
-        $this->setTabsPosition('bottom');
-    }
+        //$this->setTabsPosition('bottom');
+    }*/
     
     public function getPageData() {
         $page = parent::getPageData();
@@ -32,12 +32,12 @@ class EditProject extends EditController {
     
     protected function loadData($viewName, $view) {
         switch ($viewName) {
-            case 'ListProject':
-                $codcliente = $this->getViewModelValue('EditProject', 'codcliente');
-                $where = [new DataBaseWhere('codcliente', $codcliente)];
+            case 'ListEmpresaExtra':
+                $idempresa = $this->getViewModelValue('EditEmpresaExtra', 'idempresa');
+                $where = [new DataBaseWhere('idempresa', $idempresa)];
                 $view->loadData('', $where);
                 break;
-            case 'EditProject':
+            case 'EditEmpresaExtra':
                 parent::loadData($viewName, $view);
                 if (!$this->views[$this->active]->model->exists()) {
                    $this->views[$this->active]->model->user = $this->user->nick;

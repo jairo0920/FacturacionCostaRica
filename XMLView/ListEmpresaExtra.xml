@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<view>
+    <columns>
+        <column name="id" order="100">
+            <widget type="text" fieldname="idempresaextra" />
+        </column>
+        <column name="empresa" order="110">
+            <widget type="autocomplete" fieldname="idempresa" onclick="EditEmpresa">
+                <values source="empresas" fieldcode="idempresa" fieldtitle="nombre"></values>
+            </widget>
+        </column>
+        <column name="regimenMH" order="120">
+            <widget type="text" fieldname="regimenMH" />
+        </column>
+    </columns>
+</view>

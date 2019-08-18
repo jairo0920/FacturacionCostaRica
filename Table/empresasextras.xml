@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<table>
+    <column>
+        <name>idempresa</name>
+        <type>integer</type>
+        <null>NO</null>
+    </column>
+    <column>
+        <name>idempresaextra</name>
+        <type>serial</type>
+        <null>NO</null>
+    </column>
+    <column>
+        <name>regimenMH</name>
+        <type>character varying(20)</type>
+    </column>
+    <column>
+        <name>type_indetif_fe</name>
+        <type>character varying(2)</type>
+    </column>
+    <column>
+        <name>idProvincia_fe</name>
+        <type>character varying(10)</type>
+    </column>
+    <column>
+        <name>idCanton_fe</name>
+        <type>character varying(10)</type>
+    </column>
+    <column>
+        <name>idDistrito_fe</name>
+        <type>character varying(10)</type>
+    </column>
+    <column>
+        <name>idBarrio_fe</name>
+        <type>character varying(10)</type>
+    </column>
+    <column>
+        <name>cod_pais_tel_fe</name>
+        <type>character varying(3)</type>
+    </column>
+    <column>
+        <name>cod_cod_pais_fax_fe</name>
+        <type>character varying(3)</type>
+    </column>
+    <column>
+        <name>ENV_fe</name>
+        <type>character varying(30)</type>
+    </column>
+    <column>
+        <name>situacion_fe</name>
+        <type>character varying(30)</type>
+    </column>
+    <column>
+        <name>stagP12Url_fe</name>
+        <type>character varying(255)</type>
+    </column>
+    <column>
+        <name>prodP12Url_fe</name>
+        <type>character varying(255)</type>
+    </column>
+    <column>
+        <name>stagUserName_fe</name>
+        <type>character varying(255)</type>
+    </column>
+    <column>
+        <name>stagPassword_fe</name>
+        <type>character varying(255)</type>
+        <nulo>YES</nulo>
+    </column>
+    <column>
+        <name>prodUserName_fe</name>
+        <type>character varying(255)</type>
+    </column>
+    <column>
+        <name>prodPassword_fe</name>
+        <type>character varying(255)</type>
+    </column>
+    <column>
+        <name>prodP12Code_fe</name>
+        <type>character varying(255)</type>
+    </column>
+    <column>
+        <name>stagP12Code_fe</name>
+        <type>character varying(255)</type>
+    </column>
+    <constraint>
+        <name>empresasextras_pkey</name>
+        <type>PRIMARY KEY (idempresaextra)</type>
+    </constraint>
+</table>
