@@ -8,11 +8,12 @@ class ListProject extends ListController {
     //put your code here
     public function getPageData(): array {
         $pageData = parent::getPageData();
-        $pageData['menu'] = 'admin';
+        //$pageData['menu'] = 'admin';
         //$pageData['menu'] = 'Fact. Costa Rica';
-        $pageData['submenu'] = 'Fact. Costa Rica';
-        $pageData['title'] = 'Configuracion';
-        $pageData['icon'] = 'fas fa-fist-raised';
+        //$pageData['submenu'] = 'Fact. Costa Rica';
+        //$pageData['title'] = 'Configuracion';
+        //$pageData['icon'] = 'fas fa-fist-raised';
+        $pageData['showonmenu'] = false;
         return $pageData;
     }
     
