@@ -1,22 +1,17 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 namespace FacturaScripts\Plugins\FacturacionCostaRica\Controller;
 
-use FacturaScripts\Core\Lib\ExtendedController\ListController;
+use FacturaScripts\Core\Base\Controller;
 
 /**
  * Description of ListBitacoraFacturacion
  *
  * @author jcruz
  */
-class ListBitacoraFacturacion extends ListController{
+class BitacoraFacturacion extends Controller{
     //put your code here
+    
     public function getPageData(): array {
         $pageData = parent::getPageData();
         $pageData['menu'] = 'admin';
@@ -28,13 +23,9 @@ class ListBitacoraFacturacion extends ListController{
     }
 
     protected function createViews() {
+        //AssetManager::add('js', FS_ROUTE . '/Plugins/FacturacionCostaRica/Assets/JS/jquery.dataTables.js', 3);
+        //AssetManager::add('js', FS_ROUTE . '/Plugins/FacturacionCostaRica/Assets/JS/dataTables.bootstrap4.js', 3);
         $this->setTemplate('BitacoraFacturacion');;
     }
-    
-    public function privateCore(&$response, $user, $permissions)
-    {
-        parent::privateCore($response, $user, $permissions);
-        $this->setTemplate('BitacoraFacturacion');
-    }
-    
+
 }
