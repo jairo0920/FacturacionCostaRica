@@ -5,6 +5,20 @@ $.ajax({
   console.log(response);
 });
 
+$.ajax({
+  "url": "https://api.hacienda.go.cr/indicadores/tc/euro",
+  "method": "GET"
+}).done(function (response) {
+  console.log(response);
+});
+
+$.ajax({
+  "url": "https://api.hacienda.go.cr/fe/ae?identificacion=206380176",
+  "method": "GET"
+}).done(function (response) {
+  console.log(response);
+});
+
 $(document).ready(function(){
     $('#exampleModal').on('show.bs.modal', function (event) {
         //console.log('addend2:', 2);
