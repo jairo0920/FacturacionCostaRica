@@ -6,13 +6,18 @@ $(document).ready(function() {
             var cedula = $("input[name=cifnif]")[0].value;
             var nombre = $("input[name=administrador]")[0].value;
             if (cedula !== ""){
-                if (nombre === ""){
-                     GetObtenerNombreAdministrador(cedula);
-                };
+                GetObtenerNombreAdministrador(cedula);
             };
         };       
     }); 
 }); 
+
+window.onload = function () {
+    var cedula = $("input[name=cifnif]")[0].value;
+    if (cedula !== ""){
+        GetObtenerNombreAdministrador(cedula);
+    };
+};
 
 function GetObtenerNombreAdministrador(cedula) {
     $.ajax({
@@ -21,9 +26,24 @@ function GetObtenerNombreAdministrador(cedula) {
     }).done(function (response) {
         var jsondata = JSON.stringify(response);
         var obj = jQuery.parseJSON(jsondata);
-        //var json = JSON.parse(jsondata);
         //console.log(jsondata);
-        console.log(obj.nombre);
         document.getElementsByName("administrador")[0].value = obj.nombre;
+        if (obj.tipoIdentificacion === "01"){
+            document.getElementsByName("personafisica")[0].checked = true;
+        };
+        document.getElementsByName("tipoidentificacion")[0].value = "Tipo " + obj.tipoIdentificacion;
+        var jsondataregimen = JSON.stringify(obj.regimen);
+        var objregimen = jQuery.parseJSON(jsondataregimen);
+        document.getElementsByName("tiporegimen")[0].value = objregimen.codigo + " - " + objregimen.descripcion;
+        var jsondatasituacion = JSON.stringify(obj.situacion);
+        var objsituacion = jQuery.parseJSON(jsondatasituacion);
+        document.getElementsByName("administracionTributaria")[0].value = objsituacion.administracionTributaria;
+        document.getElementsByName("estado")[0].value = objsituacion.estado;
+        document.getElementsByName("moroso")[0].value = objsituacion.moroso;
+        document.getElementsByName("omiso")[0].value = objsituacion.omiso;
+        
+        if (objsituacion.moroso === "SI"){
+            $('#modaltest').modal('show');
+        };
     });
 };

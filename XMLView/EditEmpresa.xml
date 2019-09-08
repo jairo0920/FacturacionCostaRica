@@ -59,12 +59,12 @@
             <!--<column name="province" numcolumns="3" order="140">
                 <widget type="text" fieldname="provincia" />
             </column>-->
-            <column name="country" titleurl="ListPais" numcolumns="3" order="150">
+            <column name="country" titleurl="ListPais" numcolumns="3" order="140">
                 <widget type="select" fieldname="codpais" onclick="EditPais" required="true">
                     <values source="paises" fieldcode="codpais" fieldtitle="nombre"></values>
                 </widget>
             </column>
-            <column name="province" titleurl="ListPais" numcolumns="3" order="140">
+            <column name="province" titleurl="ListPais" numcolumns="3" order="150">
                 <widget type="select" fieldname="provincia" onclick="EditPais">
                     <values source="provincias" fieldcode="idprovincia" fieldtitle="provincia"></values>
                 </widget>
@@ -106,27 +106,34 @@
             </column>
         </group>
         <group name="contact-tributacion" numcolumns="12" icon="fas fa-address-card" title="Datos del contribuyente">
-            <column name="tipo" numcolumns="4" order="100">
+            <column name="Tipo de identificacion" numcolumns="4" order="100">
                 <widget type="text" fieldname="tipoidentificacion" readonly="true" maxlength="30" icon="fas fa-phone"/>
             </column>
-            <column name="regimen" numcolumns="4" order="110">
-                <widget type="text" fieldname="tiporegimen" maxlength="30" icon="fas fa-mobile-alt"/>
+            <column name="Régimen" numcolumns="4" order="110">
+                <widget type="text" fieldname="tiporegimen" readonly="true" maxlength="30" icon="fas fa-mobile-alt"/>
             </column>
-            <column name="administracionTributaria" numcolumns="4" order="120">
-                <widget type="text" fieldname="administracion" maxlength="30" icon="fas fa-fax" />
+            <column name="Administración Tributaria" numcolumns="4" order="120">
+                <widget type="text" fieldname="administracionTributaria" readonly="true" maxlength="30" icon="fas fa-fax" />
             </column>
-            <column name="estado" numcolumns="3" order="130">
-                <widget type="text" fieldname="estadotributario" maxlength="100" icon="fas fa-envelope" >
-                    <option color='success'>activo</option> 
-                    <option color='warning'>inactivo</option>
+            <column name="Estado" numcolumns="4" order="130">
+                <widget type="text" fieldname="estado" readonly="true" maxlength="100" icon="fas fa-envelope" >
+                    <option color='success'>Inscrito</option> 
+                    <option color='warning'>Desinscrito</option>
                 </widget>
             </column>
-            <column name="moroso" numcolumns="3" order="140">
-                <widget type="link" fieldname="morosotributario" maxlength="100" icon="fas fa-envelope" />
+            <column name="Moroso" numcolumns="4" order="140">
+                <widget type="link" fieldname="moroso" onclick="https://www.hacienda.go.cr/ATV/frmConsultaSituTributaria.aspx" readonly="true" maxlength="100" icon="fas fa-envelope" />
             </column>
-            <column name="omiso" numcolumns="3" order="140">
-                <widget type="link" fieldname="omisotributario" maxlength="100" icon="fas fa-envelope" />
+            <column name="Omiso" numcolumns="4" order="140">
+                <widget type="text" fieldname="omiso" readonly="true" maxlength="100" icon="fas fa-envelope" />
             </column>
         </group>
     </columns>
+    <modals>
+        <group name="test" title="Se encuentra Moroso.!" icon="fas fa-users">
+            <column name="name" numcolumns="12" description="Más información: https://www.hacienda.go.cr/ATV/frmConsultaSituTributaria.aspx">
+                <widget type="text" fieldname="nombre" required="true" />
+            </column>
+        </group>
+    </modals>
 </view>
